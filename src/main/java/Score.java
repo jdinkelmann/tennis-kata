@@ -19,11 +19,11 @@ public class Score {
 	}
 	
 	public boolean isAdvantageScore() {
-		return player1.hasAdvantage(player2) || player2.hasAdvantage(player1);
+		return player1.hasAdvantageOver(player2) || player2.hasAdvantageOver(player1);
 	}
 	
 	public boolean isGameOver() {
-		return player1.hasWon(player2) || player2.hasWon(player1);
+		return player1.hasWonAgainst(player2) || player2.hasWonAgainst(player1);
 	}
 	
 	public String getNormalScore() {
@@ -36,12 +36,12 @@ public class Score {
 	}
 	
 	public String getAdvantageScore() {
-		Player playerWithAdvantage = player1.hasAdvantage(player2)? player1:player2;
+		Player playerWithAdvantage = player1.hasAdvantageOver(player2)? player1:player2;
 		return "Advantage " + playerWithAdvantage.getName();
 	}
 	
 	public String getWinningScore() {
-		Player playerThatWon = player1.hasWon(player2)? player1:player2;
+		Player playerThatWon = player1.hasWonAgainst(player2)? player1:player2;
 		return "Win for " + playerThatWon.getName();
 	}
 	
