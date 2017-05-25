@@ -21,5 +21,15 @@ public class Player {
 		this.name = name;
 	}
 	
+	public Boolean hasAdvantage(Player otherPlayer) {
+		Integer advantage = score - otherPlayer.getScore();
+		return score >= 4 && advantage.equals(1);
+	}
+	
+	public Boolean hasWon(Player otherPlayer) {
+		Integer advantage = score - otherPlayer.getScore();
+		return score >= 4 && advantage >= 2;
+	}
+	
 	
 }
